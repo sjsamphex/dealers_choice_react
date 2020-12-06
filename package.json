@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack",
     "build:dev": "npm run build -- --watch --mode=development",
+    "start-server": "nodemon --watch server -e js,html server/main.js",
     "start:dev": "npm run build:dev & nodemon server --ignore dist/ --ignore src/"
   },
   "keywords": [],
@@ -21,6 +22,7 @@
     "@babel/preset-react": "^7.12.7",
     "axios": "^0.21.0",
     "babel-loader": "^8.2.2",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
