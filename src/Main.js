@@ -34,6 +34,7 @@ class Main extends React.Component {
       <div>
         <h3>hello world this is react</h3>
         <TrainerView />
+        <h3>PokePC</h3>
         <PokePC pokePCList={this.state.pokePCList} />
       </div>
     );

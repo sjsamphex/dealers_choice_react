@@ -4,3 +4,21 @@
 h1 {
   color: blue;
 }
+
+.PokePC {
+  display: flex;
+  flex-flow: row wrap;
+  height: 600px;
+  width: 600px;
+  border: 1px solid #ccc;
+  font: 16px/26px Georgia, Garamond, Serif;
+  overflow: scroll;
+  padding: 1rem;
+}
+
+li {
+  margin: 1rem;
+  list-style: none;
+  border-style: solid;
+  padding: 1rem;
+}
