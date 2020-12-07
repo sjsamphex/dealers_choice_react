@@ -22,4 +22,17 @@ router.get('/trainers/:trainerid', async (req, res, next) => {
   }
 });
 
+//convert this into a post?
+router.get('/create/:trainerName', async (req, res, next) => {
+  try {
+    console.log('trying to create trainer');
+    const newTrainer = await Trainer.create({
+      name: req.params.trainerName,
+    });
+    res.send(newTrainer);
+  } catch (ex) {
+    next(ex);
+  }
+});
+
 module.exports = router;

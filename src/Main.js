@@ -10,4 +10,7 @@ export default class Main extends React.Component {
       trainerData: {},
     };
   }
+  render() {
+    return <h3>hello react this is react</h3>;
+  }
 }
