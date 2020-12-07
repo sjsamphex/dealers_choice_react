@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import TrainerView from './trainerview';
+import PokePC from './PokePC';
 
 class Main extends React.Component {
   constructor(props) {
@@ -13,21 +15,28 @@ class Main extends React.Component {
   }
   async componentDidMount() {
     try {
-      // const trainerData = (
-      //   await axios.get(`/api/trainer/${this.state.selectedTrainer}`)
-      // ).data;
-      // const pokePCList = (await axios.get(/api/aeinrrt / 3)).data.pokemons;
-      // this.setState({
-      //   trainerData,
-      //   pokePCList,
-      // });
+      const trainerData = (
+        await axios.get(`/api/trainers/${this.state.selectedTrainer}`)
+      ).data;
+
+      const pokePCList = (await axios.get(`/api/trainers/3`)).data.pokemons;
+      this.setState({
+        trainerData,
+        pokePCList,
+      });
     } catch (ex) {
       console.log(ex);
     }
   }
   async updateTrainer() {}
   render() {
-    return <h3>hello world this is react</h3>;
+    return (
+      <div>
+        <h3>hello world this is react</h3>
+        <TrainerView />
+        <PokePC pokePCList={this.state.pokePCList} />
+      </div>
+    );
   }
 }
 
