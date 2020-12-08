@@ -24,11 +24,11 @@ router.get('/trainers/:trainerid', async (req, res, next) => {
 });
 
 //convert this into a post?
-router.get('/create/:trainerName', async (req, res, next) => {
+router.post('/createTrainer', async (req, res, next) => {
   try {
     console.log('trying to create trainer');
     const newTrainer = await Trainer.create({
-      name: req.params.trainerName,
+      name: req.body.trainerName,
     });
     res.send(newTrainer);
   } catch (ex) {

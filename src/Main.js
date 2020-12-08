@@ -19,6 +19,7 @@ class Main extends React.Component {
     this.selectTrainer = this.selectTrainer.bind(this);
     this.sendToTrainer = this.sendToTrainer.bind(this);
     this.sendToPC = this.sendToPC.bind(this);
+    this.createTrainer = this.createTrainer.bind(this);
   }
   async componentDidMount() {
     this.updateData();
@@ -92,6 +93,22 @@ class Main extends React.Component {
       }
     }
   }
+  async createTrainer(trainerName) {
+    try {
+      await axios({
+        method: 'post',
+        url: '/api/createTrainer',
+        headers: {},
+        data: {
+          trainerName: trainerName,
+        },
+      });
+
+      this.updateData();
+    } catch (error) {
+      console.log(error);
+    }
+  }
   render() {
     return (
       <div className="Container">
@@ -99,6 +116,7 @@ class Main extends React.Component {
           <TrainerList
             trainerList={this.state.trainerList}
             selectTrainer={this.selectTrainer}
+            createTrainer={this.createTrainer}
           />
           <TrainerView
             trainerData={this.state.trainerData}
