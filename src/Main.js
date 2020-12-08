@@ -15,11 +15,15 @@ class Main extends React.Component {
       trainerData: {},
       selectedPokemon: {},
     };
-    this.updateTrainer = this.updateTrainer.bind(this);
     this.selectPokemon = this.selectPokemon.bind(this);
     this.selectTrainer = this.selectTrainer.bind(this);
+    this.sendToTrainer = this.sendToTrainer.bind(this);
+    this.sendToPC = this.sendToPC.bind(this);
   }
   async componentDidMount() {
+    this.updateData();
+  }
+  async updateData() {
     try {
       const trainerList = (await axios.get(`/api/trainers`)).data;
       const trainerData = (
@@ -37,7 +41,32 @@ class Main extends React.Component {
       console.log(ex);
     }
   }
-  async updateTrainer() {}
+  async sendToTrainer() {
+    await axios({
+      method: 'post',
+      url: '/api/sendToTrainer',
+      headers: {},
+      data: {
+        selectedTrainer: this.state.trainerData,
+        selectedPokemon: this.state.selectedPokemon,
+      },
+    });
+
+    this.updateData();
+  }
+  async sendToPC(pokemonId) {
+    console.log('front end going to send to PC');
+    await axios({
+      method: 'post',
+      url: '/api/sendToPC',
+      headers: {},
+      data: {
+        selectedPokemon: pokemonId,
+      },
+    });
+
+    this.updateData();
+  }
   selectPokemon(pokemon) {
     this.setState({
       selectedPokemon: pokemon,
@@ -50,23 +79,26 @@ class Main extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h3>PokePC</h3>
-        <div className="Container">
-          <div className="Trainer">
-            <TrainerList
-              trainerList={this.state.trainerList}
-              selectTrainer={this.selectTrainer}
-            />
-            <TrainerView selectedTrainer={this.state.selectedTrainer} />
-          </div>
-
-          <PokePC
-            pokePCList={this.state.pokePCList}
-            selectPokemon={this.selectPokemon}
+      <div className="Container">
+        <div className="Trainer">
+          <TrainerList
+            trainerList={this.state.trainerList}
+            selectTrainer={this.selectTrainer}
           />
-          <PokemonView selectedPokemon={this.state.selectedPokemon} />
+          <TrainerView
+            trainerData={this.state.trainerData}
+            sendToPC={this.sendToPC}
+          />
         </div>
+
+        <PokePC
+          pokePCList={this.state.pokePCList}
+          selectPokemon={this.selectPokemon}
+        />
+        <PokemonView
+          selectedPokemon={this.state.selectedPokemon}
+          sendToTrainer={this.sendToTrainer}
+        />
       </div>
     );
   }

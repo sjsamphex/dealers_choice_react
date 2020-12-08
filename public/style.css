@@ -38,3 +38,45 @@ h1 {
   border-radius: 1rem;
   padding: 1rem;
 }
+
+.TrainerList {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+.TrainerList li {
+  list-style: none;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.TrainerView li {
+  margin: 2px;
+  list-style: none;
+  border-style: solid;
+  padding: 0;
+  border-width: 1px;
+  border-radius: 1rem;
+}
+
+.wiggle {
+  animation: wiggle 1s infinite;
+}
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  85% {
+    transform: rotate(20deg);
+  }
+  95% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

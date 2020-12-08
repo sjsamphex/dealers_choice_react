@@ -1,7 +1,7 @@
 import React from 'react';
 
 function PokemonView(props) {
-  const { selectedPokemon } = props;
+  const { selectedPokemon, sendToTrainer } = props;
   let imgsrc = `/thumbnails/001.png`;
   let pokemonID = `#001: Bulbasaur`;
   if (selectedPokemon) {
@@ -16,6 +16,9 @@ function PokemonView(props) {
       {pokemonID}
       <br />
       <img src={imgsrc} title={pokemonID} />
+      <button onClick={() => sendToTrainer(selectedPokemon.id)}>
+        Add to Trainer
+      </button>
     </div>
   );
 }

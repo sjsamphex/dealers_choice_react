@@ -3,7 +3,7 @@ import React from 'react';
 function TrainerList(props) {
   const { trainerList } = props;
   return (
-    <div>
+    <div className="TrainerList">
       {trainerList.map((trainer) => (
         <li key={trainer.id}>{trainer.name}</li>
       ))}
