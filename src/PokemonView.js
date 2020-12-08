@@ -2,10 +2,14 @@ import React from 'react';
 
 function PokemonView(props) {
   const { selectedPokemon } = props;
-  const imgsrc = `/thumbnails/${String(selectedPokemon.id).padStart(3, 0)}.png`;
-  const pokemonID = `#${String(selectedPokemon.id).padStart(3, 0)}: ${
-    selectedPokemon.name
-  }`;
+  let imgsrc = `/thumbnails/001.png`;
+  let pokemonID = `#001: Bulbasaur`;
+  if (selectedPokemon) {
+    imgsrc = `/thumbnails/${String(selectedPokemon.id).padStart(3, 0)}.png`;
+    pokemonID = `#${String(selectedPokemon.id).padStart(3, 0)}: ${
+      selectedPokemon.name
+    }`;
+  }
 
   return (
     <div className="SelectedPokemon">
