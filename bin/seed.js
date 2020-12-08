@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const { db, Pokemon, Trainer } = require('../server/db');
-const pokemon = JSON.parse(fs.readFileSync('pokemon.json', 'utf8'));
+const pokemon = JSON.parse(fs.readFileSync('pokemon151.json', 'utf8'));
 
 const seed = async () => {
   await db.sync({ force: true });

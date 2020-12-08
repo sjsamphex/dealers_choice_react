@@ -1,7 +1,7 @@
 import React from 'react';
 
 function PokePC(props) {
-  const { pokePCList } = props;
+  const { pokePCList, selectPokemon } = props;
   return (
     <ul className="PokePC">
       {pokePCList.map((pokemon) => {
@@ -10,7 +10,7 @@ function PokePC(props) {
           pokemon.name
         }`;
         return (
-          <li key={pokemon.id}>
+          <li key={pokemon.id} onClick={() => selectPokemon(pokemon.id)}>
             <img src={imgsrc} title={pokemonName} />
           </li>
         );

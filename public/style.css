@@ -4,21 +4,37 @@
 h1 {
   color: blue;
 }
-
+.Container {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1rem;
+  justify-content: space-evenly;
+}
 .PokePC {
   display: flex;
   flex-flow: row wrap;
-  height: 600px;
-  width: 600px;
+  justify-content: space-evenly;
+  height: 400px;
+  width: 400px;
   border: 1px solid #ccc;
-  font: 16px/26px Georgia, Garamond, Serif;
+  border-radius: 1rem;
   overflow: scroll;
   padding: 1rem;
 }
 
-li {
-  margin: 0.1rem;
+.PokePC li {
+  margin: 2px;
   list-style: none;
   border-style: solid;
-  padding: 0.1rem;
+  padding: 0;
+  border-width: 1px;
+  border-radius: 1rem;
+}
+
+.SelectedPokemon {
+  height: 400px;
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  padding: 1rem;
 }
