@@ -42,40 +42,55 @@ class Main extends React.Component {
     }
   }
   async sendToTrainer() {
-    await axios({
-      method: 'post',
-      url: '/api/sendToTrainer',
-      headers: {},
-      data: {
-        selectedTrainer: this.state.trainerData,
-        selectedPokemon: this.state.selectedPokemon,
-      },
-    });
+    try {
+      await axios({
+        method: 'post',
+        url: '/api/sendToTrainer',
+        headers: {},
+        data: {
+          selectedTrainer: this.state.trainerData,
+          selectedPokemon: this.state.selectedPokemon,
+        },
+      });
 
-    this.updateData();
+      this.updateData();
+    } catch (error) {
+      console.log(error);
+    }
   }
   async sendToPC(pokemonId) {
-    console.log('front end going to send to PC');
-    await axios({
-      method: 'post',
-      url: '/api/sendToPC',
-      headers: {},
-      data: {
-        selectedPokemon: pokemonId,
-      },
-    });
+    try {
+      await axios({
+        method: 'post',
+        url: '/api/sendToPC',
+        headers: {},
+        data: {
+          selectedPokemon: pokemonId,
+        },
+      });
 
-    this.updateData();
+      this.updateData();
+    } catch (error) {
+      console.log(error);
+    }
   }
   selectPokemon(pokemon) {
     this.setState({
       selectedPokemon: pokemon,
     });
   }
-  selectTrainer(id) {
-    this.setState({
-      selectedTrainer: this.state.trainerList[parseInt(id) - 1],
-    });
+  async selectTrainer(id) {
+    if (this.state.selectedTrainer !== id) {
+      try {
+        const trainerData = (await axios.get(`/api/trainers/${id}`)).data;
+        this.setState({
+          selectedTrainer: id,
+          trainerData,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    }
   }
   render() {
     return (

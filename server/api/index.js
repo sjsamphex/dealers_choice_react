@@ -50,7 +50,6 @@ router.post('/sendToTrainer', async (req, res, next) => {
 
 router.post('/sendToPC', async (req, res, next) => {
   try {
-    console.log('************************sending to pc');
     const pokemon = await Pokemon.findByPk(req.body.selectedPokemon);
     pokemon.trainerId = 3;
     await pokemon.save();
