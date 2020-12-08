@@ -10,12 +10,19 @@ h1 {
   padding: 1rem;
   justify-content: space-evenly;
 }
+
+.PokePC,
+.SelectedPokemon,
+.Trainer {
+  height: 400px;
+  width: 300px;
+}
+
 .PokePC {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  height: 400px;
-  width: 400px;
+
   border: 1px solid #ccc;
   border-radius: 1rem;
   overflow: scroll;
@@ -32,16 +39,12 @@ h1 {
 }
 
 .SelectedPokemon {
-  height: 400px;
-  width: 400px;
   border: 1px solid #ccc;
   border-radius: 1rem;
   padding: 1rem;
 }
 
 .Trainer {
-  height: 400px;
-  width: 400px;
   border: 1px solid #ccc;
   border-radius: 1rem;
   padding: 1rem;
@@ -80,5 +83,12 @@ h1 {
   }
   100% {
     transform: translateY(0px);
+  }
+}
+
+@media (max-width: 600px) {
+  .Container {
+    display: flex;
+    flex-direction: column;
   }
 }
