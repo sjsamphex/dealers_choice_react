@@ -17,8 +17,8 @@ h1 {
 }
 
 li {
-  margin: 1rem;
+  margin: 0.1rem;
   list-style: none;
   border-style: solid;
-  padding: 1rem;
+  padding: 0.1rem;
 }

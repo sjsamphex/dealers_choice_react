@@ -5,7 +5,15 @@ function PokePC(props) {
   return (
     <ul className="PokePC">
       {pokePCList.map((pokemon) => {
-        return <li key={pokemon.id}>{pokemon.name}</li>;
+        const imgsrc = `/sprites/${String(pokemon.id).padStart(3, 0)}MS.png`;
+        const pokemonName = `#${String(pokemon.id).padStart(3, 0)}: ${
+          pokemon.name
+        }`;
+        return (
+          <li key={pokemon.id}>
+            <img src={imgsrc} title={pokemonName} />
+          </li>
+        );
       })}
     </ul>
   );
