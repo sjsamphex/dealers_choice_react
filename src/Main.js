@@ -38,10 +38,9 @@ class Main extends React.Component {
     }
   }
   async updateTrainer() {}
-  selectPokemon(id) {
-    console.log('selecting pokemon ', id);
+  selectPokemon(pokemon) {
     this.setState({
-      selectedPokemon: this.state.pokePCList[parseInt(id) - 1],
+      selectedPokemon: pokemon,
     });
   }
   selectTrainer(id) {

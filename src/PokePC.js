@@ -10,7 +10,7 @@ function PokePC(props) {
           pokemon.name
         }`;
         return (
-          <li key={pokemon.id} onClick={() => selectPokemon(pokemon.id)}>
+          <li key={pokemon.id} onClick={() => selectPokemon(pokemon)}>
             <img src={imgsrc} title={pokemonName} />
           </li>
         );

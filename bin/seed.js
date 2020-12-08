@@ -23,6 +23,12 @@ const seed = async () => {
       Pokemon.create({
         name: pokemon.name.english,
         trainerId: PokePCOwner.id,
+        HP: pokemon.base.HP,
+        Attack: pokemon.base.Attack,
+        Defense: pokemon.base.Defense,
+        Sp_Attack: pokemon.base['Sp. Attack'],
+        Sp_Defense: pokemon.base['Sp. Defense'],
+        Speed: pokemon.base.Speed,
       })
     )
   );
