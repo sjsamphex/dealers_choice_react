@@ -39,6 +39,13 @@ h1 {
   padding: 1rem;
 }
 
+.Trainer {
+  height: 400px;
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  padding: 1rem;
+}
 .TrainerList {
   display: flex;
   flex-flow: row wrap;
@@ -61,22 +68,17 @@ h1 {
 }
 
 .wiggle {
-  animation: wiggle 1s infinite;
+  animation: wiggle 0.5s infinite;
+  animation-timing-function: ease;
 }
 @keyframes wiggle {
   0% {
     transform: rotate(0deg);
   }
-  80% {
-    transform: rotate(0deg);
-  }
-  85% {
-    transform: rotate(20deg);
-  }
-  95% {
-    transform: rotate(-20deg);
+  50% {
+    transform: translateY(5px);
   }
   100% {
-    transform: rotate(0deg);
+    transform: translateY(0px);
   }
 }

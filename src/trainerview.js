@@ -27,7 +27,7 @@ function TrainerView(props) {
 
   return (
     <div>
-      <h2>{trainerData.name}</h2>
+      <h2>{trainerData.name}'s Party</h2>
       {trainerPokeList}
     </div>
   );
