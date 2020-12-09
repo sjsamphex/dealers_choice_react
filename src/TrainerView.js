@@ -10,6 +10,7 @@ function TrainerView(props) {
   if (trainerData.pokemons && trainerData.pokemons.length > 0) {
     trainerPokeList = (
       <div className="TrainerView">
+        Party Size: {trainerData.pokemons.length}/6
         {trainerData.pokemons.map((pokemon) => {
           const imgsrc = `/sprites/${String(pokemon.id).padStart(3, 0)}MS.png`;
           const pokemonName = `#${String(pokemon.id).padStart(3, 0)}: ${
