@@ -29,15 +29,15 @@ h1 {
   padding: 1rem;
 }
 
-.PokePC li {
+.PokePC button {
   margin: 2px;
-  list-style: none;
   border-style: solid;
   padding: 0;
   border-width: 1px;
   border-radius: 1rem;
+  background-color: white;
 }
-.PokePC li:hover {
+.PokePC button:hover {
   background-color: lightblue;
 }
 
@@ -71,6 +71,11 @@ h1 {
   padding: 0;
   border-width: 1px;
   border-radius: 1rem;
+}
+
+img {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .wiggle {
