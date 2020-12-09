@@ -15,7 +15,9 @@ function TrainerView(props) {
           return (
             <li key={pokemon.id}>
               <img className="wiggle" src={imgsrc} title={pokemonName} />
-              <button onClick={() => sendToPC(pokemon.id)}>Send to PC</button>
+              <button onClick={() => sendToPC(pokemon.id)}>
+                Send {pokemon.name} to PC
+              </button>
             </li>
           );
         })}

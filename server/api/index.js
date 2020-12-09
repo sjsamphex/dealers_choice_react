@@ -23,7 +23,6 @@ router.get('/trainers/:trainerid', async (req, res, next) => {
   }
 });
 
-//convert this into a post?
 router.post('/createTrainer', async (req, res, next) => {
   try {
     console.log('trying to create trainer');

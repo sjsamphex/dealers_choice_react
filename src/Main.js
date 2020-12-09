@@ -95,7 +95,7 @@ class Main extends React.Component {
   }
   async createTrainer(trainerName) {
     try {
-      await axios({
+      const newTrainer = await axios({
         method: 'post',
         url: '/api/createTrainer',
         headers: {},
@@ -103,8 +103,7 @@ class Main extends React.Component {
           trainerName: trainerName,
         },
       });
-
-      this.updateData();
+      this.selectTrainer(newTrainer.data.id);
     } catch (error) {
       console.log(error);
     }
@@ -131,6 +130,7 @@ class Main extends React.Component {
         <PokemonView
           selectedPokemon={this.state.selectedPokemon}
           sendToTrainer={this.sendToTrainer}
+          trainerData={this.state.trainerData}
         />
       </div>
     );
