@@ -34,4 +34,6 @@ const Pokemon = db.define('pokemon', {
   },
 });
 
+//create a before save hook to limit trainer pokemon party to 6
+
 module.exports = Pokemon;

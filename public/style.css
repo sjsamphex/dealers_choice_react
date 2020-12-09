@@ -3,6 +3,10 @@
 }
 h1 {
   color: blue;
+  font-family: 'VT323';
+}
+h2 {
+  /* font-family: 'Press Start 2P', cursive; */
 }
 .Container {
   display: flex;
@@ -69,6 +73,16 @@ h1 {
   list-style: none;
   border-style: solid;
   padding: 0;
+  border-width: 1px;
+  border-radius: 1rem;
+}
+
+.TrainerView button {
+  font-size: 12px;
+  margin: 2px;
+  list-style: none;
+  border-style: solid;
+  padding: 1rem;
   border-width: 1px;
   border-radius: 1rem;
 }
