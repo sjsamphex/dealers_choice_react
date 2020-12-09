@@ -84,9 +84,11 @@ class Main extends React.Component {
     if (this.state.selectedTrainer !== id) {
       try {
         const trainerData = (await axios.get(`/api/trainers/${id}`)).data;
+        const trainerList = (await axios.get(`/api/trainers`)).data;
         this.setState({
           selectedTrainer: id,
           trainerData,
+          trainerList,
         });
       } catch (error) {
         console.log(error);
@@ -116,6 +118,7 @@ class Main extends React.Component {
             trainerList={this.state.trainerList}
             selectTrainer={this.selectTrainer}
             createTrainer={this.createTrainer}
+            selectedTrainer={this.state.selectedTrainer}
           />
           <TrainerView
             trainerData={this.state.trainerData}

@@ -3,7 +3,7 @@ import TrainerSubmit from './TrainerSubmit';
 import TrainerSelect from './TrainerSelect';
 
 function TrainerList(props) {
-  const { trainerList, selectTrainer, createTrainer } = props;
+  const { trainerList, selectTrainer, createTrainer, selectedTrainer } = props;
   return (
     <div className="TrainerList">
       {/* {trainerList.map((trainer) => (
@@ -11,7 +11,11 @@ function TrainerList(props) {
           {trainer.name}
         </li>
       ))} */}
-      <TrainerSelect trainerList={trainerList} selectTrainer={selectTrainer} />
+      <TrainerSelect
+        trainerList={trainerList}
+        selectTrainer={selectTrainer}
+        selectedTrainer={selectedTrainer}
+      />
       <TrainerSubmit createTrainer={createTrainer} />
     </div>
   );

@@ -15,10 +15,10 @@ class TrainerSubmit extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.createTrainer(this.state.value);
     this.setState({
       value: '',
     });
+    this.props.createTrainer(this.state.value);
   }
 
   render() {

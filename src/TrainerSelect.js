@@ -3,7 +3,7 @@ import React from 'react';
 class TrainerSelect extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: '1' };
+    this.state = { value: this.props.selectedTrainer };
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -17,7 +17,7 @@ class TrainerSelect extends React.Component {
     return (
       <label>
         Trainer Selection:
-        <select value={this.state.value} onChange={this.handleChange}>
+        <select value={this.props.selectedTrainer} onChange={this.handleChange}>
           {this.props.trainerList.map((trainer) => (
             <option key={trainer.id} value={trainer.id}>
               {trainer.name}
