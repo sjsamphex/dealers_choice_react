@@ -3,6 +3,10 @@
 }
 body {
   background-image: url('togepibg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-color: #fffdf0;
 }
 h1 {
   color: blue;
