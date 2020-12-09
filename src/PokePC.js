@@ -1,7 +1,7 @@
 import React from 'react';
 
 function PokePC(props) {
-  const { pokePCList, selectPokemon } = props;
+  const { pokePCList, selectPokemon, sendToTrainer } = props;
   return (
     <div className="PokePC">
       {pokePCList.map((pokemon) => {
@@ -10,8 +10,14 @@ function PokePC(props) {
           pokemon.name
         }`;
         return (
-          <button key={pokemon.id} onClick={() => selectPokemon(pokemon)}>
-            <img src={imgsrc} title={pokemonName} />
+          <button
+            key={pokemon.id}
+            onFocus={() => selectPokemon(pokemon)}
+            onClick={() => sendToTrainer(pokemon.id)}
+            onMouseEnter={() => selectPokemon(pokemon)}
+            title={pokemonName}
+          >
+            <img src={imgsrc} />
           </button>
         );
       })}

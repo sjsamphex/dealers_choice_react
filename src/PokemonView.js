@@ -30,9 +30,9 @@ function PokemonView(props) {
           </li>
         ))}
       </ul>
-      <button onClick={() => sendToTrainer(selectedPokemon.id)}>
+      {/* <button onClick={() => sendToTrainer(selectedPokemon.id)}>
         Add {selectedPokemon.name} to {trainerData.name}'s party
-      </button>
+      </button> */}
     </div>
   );
 }

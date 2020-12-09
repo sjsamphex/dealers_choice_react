@@ -44,6 +44,10 @@ h2 {
   background-color: lightblue;
 }
 
+.PokePC button:focus {
+  border-color: blue;
+}
+
 .SelectedPokemon {
   border: 1px solid #ccc;
   border-radius: 1rem;

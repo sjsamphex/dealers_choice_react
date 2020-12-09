@@ -146,6 +146,7 @@ class Main extends React.Component {
         <PokePC
           pokePCList={this.state.pokePCList}
           selectPokemon={this.selectPokemon}
+          sendToTrainer={this.sendToTrainer}
         />
         <PokemonView
           selectedPokemon={this.state.selectedPokemon}
