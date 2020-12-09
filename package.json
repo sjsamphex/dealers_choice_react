@@ -11,7 +11,8 @@
     "build:dev": "npm run build -- --watch --mode=development",
     "start-server": "nodemon --watch server -e js,html server/main.js",
     "start:dev": "npm run build:dev & nodemon server --ignore dist/ --ignore src/",
-    "seed": "node ./bin/seed"
+    "seed": "node ./bin/seed",
+    "start" :"node server"
   },
   "keywords": [],
   "author": "",
