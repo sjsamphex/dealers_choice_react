@@ -16,8 +16,7 @@ h2 {
 }
 
 .PokePC,
-.SelectedPokemon,
-.Trainer {
+.SelectedPokemon {
   height: 400px;
   width: 300px;
 }
@@ -52,6 +51,7 @@ h2 {
 }
 
 .Trainer {
+  width: 300px;
   border: 1px solid #ccc;
   border-radius: 1rem;
   padding: 1rem;
