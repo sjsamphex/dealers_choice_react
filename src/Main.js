@@ -142,17 +142,18 @@ class Main extends React.Component {
             deleteTrainer={this.deleteTrainer}
           />
         </div>
-
-        <PokePC
-          pokePCList={this.state.pokePCList}
-          selectPokemon={this.selectPokemon}
-          sendToTrainer={this.sendToTrainer}
-        />
-        <PokemonView
-          selectedPokemon={this.state.selectedPokemon}
-          sendToTrainer={this.sendToTrainer}
-          trainerData={this.state.trainerData}
-        />
+        <div className="Pokemon">
+          <PokemonView
+            selectedPokemon={this.state.selectedPokemon}
+            sendToTrainer={this.sendToTrainer}
+            trainerData={this.state.trainerData}
+          />
+          <PokePC
+            pokePCList={this.state.pokePCList}
+            selectPokemon={this.selectPokemon}
+            sendToTrainer={this.sendToTrainer}
+          />
+        </div>
       </div>
     );
   }

@@ -21,15 +21,17 @@ function PokemonView(props) {
     <div className="SelectedPokemon">
       {pokemonID}
       <br />
-      <img src={imgsrc} title={pokemonID} />
-      <hr />
-      <ul>
-        {pokemonData.map((info) => (
-          <li key={info}>
-            {info}: {selectedPokemon[info]}
-          </li>
-        ))}
-      </ul>
+      <div className="PokemonView">
+        <img src={imgsrc} title={pokemonID} />
+        <ul className="PokemonInfo">
+          {pokemonData.map((info) => (
+            <li key={info}>
+              {info}: {selectedPokemon[info]}
+            </li>
+          ))}
+        </ul>
+      </div>
+
       {/* <button onClick={() => sendToTrainer(selectedPokemon.id)}>
         Add {selectedPokemon.name} to {trainerData.name}'s party
       </button> */}

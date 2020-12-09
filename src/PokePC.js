@@ -14,6 +14,7 @@ function PokePC(props) {
             key={pokemon.id}
             onFocus={() => selectPokemon(pokemon)}
             onClick={() => sendToTrainer(pokemon.id)}
+            // {/*maybe disable the onClick in mobile?*/}
             onMouseEnter={() => selectPokemon(pokemon)}
             title={pokemonName}
           >
