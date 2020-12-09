@@ -1,11 +1,11 @@
 const path = require('path');
 const express = require('express');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const app = express();
 module.exports = app;
 
 // Logging middleware
-app.use(morgan('combined'));
+// app.use(morgan('combined'));
 
 // Body parsing middleware
 app.use(express.json());
