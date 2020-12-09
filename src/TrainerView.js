@@ -1,9 +1,12 @@
 import React from 'react';
 
 function TrainerView(props) {
-  const { trainerData, sendToPC } = props;
+  const { trainerData, sendToPC, deleteTrainer } = props;
 
   let trainerPokeList;
+  if (!trainerData) {
+    return <p>Select a Trainer</p>;
+  }
   if (trainerData.pokemons && trainerData.pokemons.length > 0) {
     trainerPokeList = (
       <div className="TrainerView">
@@ -24,7 +27,14 @@ function TrainerView(props) {
       </div>
     );
   } else {
-    trainerPokeList = <div>No Pokemon!</div>;
+    trainerPokeList = (
+      <div>
+        No Pokemon! You may delete the Trainer.
+        <button onClick={() => deleteTrainer()}>
+          Delete {trainerData.name}
+        </button>
+      </div>
+    );
   }
 
   return (

@@ -58,4 +58,14 @@ router.post('/sendToPC', async (req, res, next) => {
   }
 });
 
+router.delete('/deleteTrainer', async (req, res, next) => {
+  try {
+    const trainer = await Trainer.findByPk(req.body.selectedTrainer);
+    await trainer.destroy();
+    res.send('deleted');
+  } catch (ex) {
+    next(ex);
+  }
+});
+
 module.exports = router;

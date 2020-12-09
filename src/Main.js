@@ -20,6 +20,7 @@ class Main extends React.Component {
     this.sendToTrainer = this.sendToTrainer.bind(this);
     this.sendToPC = this.sendToPC.bind(this);
     this.createTrainer = this.createTrainer.bind(this);
+    this.deleteTrainer = this.deleteTrainer.bind(this);
   }
   async componentDidMount() {
     this.updateData();
@@ -110,6 +111,21 @@ class Main extends React.Component {
       console.log(error);
     }
   }
+  async deleteTrainer() {
+    try {
+      const newTrainer = await axios({
+        method: 'delete',
+        url: '/api/deleteTrainer',
+        headers: {},
+        data: {
+          selectedTrainer: this.state.selectedTrainer,
+        },
+      });
+      this.updateData();
+    } catch (error) {
+      console.log(error);
+    }
+  }
   render() {
     return (
       <div className="Container">
@@ -123,6 +139,7 @@ class Main extends React.Component {
           <TrainerView
             trainerData={this.state.trainerData}
             sendToPC={this.sendToPC}
+            deleteTrainer={this.deleteTrainer}
           />
         </div>
 
