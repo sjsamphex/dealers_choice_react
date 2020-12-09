@@ -3,7 +3,7 @@ import React from 'react';
 function PokePC(props) {
   const { pokePCList, selectPokemon } = props;
   return (
-    <ul className="PokePC">
+    <div className="PokePC">
       {pokePCList.map((pokemon) => {
         const imgsrc = `/sprites/${String(pokemon.id).padStart(3, 0)}MS.png`;
         const pokemonName = `#${String(pokemon.id).padStart(3, 0)}: ${
@@ -15,7 +15,7 @@ function PokePC(props) {
           </button>
         );
       })}
-    </ul>
+    </div>
   );
 }
 

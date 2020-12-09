@@ -7,6 +7,7 @@ const Trainer = db.define('trainer', {
   name: {
     type: STRING,
     allowNull: false,
+    unique: true,
   },
 });
 
